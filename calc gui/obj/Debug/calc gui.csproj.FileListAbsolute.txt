@@ -1,0 +1,95 @@
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\Assets\ApplicationIcon.png
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\Assets\Tiles\FlipCycleTileLarge.png
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\Assets\Tiles\FlipCycleTileSmall.png
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\Assets\Tiles\IconicTileMediumLarge.png
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\Assets\Tiles\IconicTileSmall.png
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\calc_gui.dll
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\calc_gui.pdb
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\AppManifest.xaml
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\calc_gui_Debug_AnyCPU.xap
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\obj\Debug\App.g.cs
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\obj\Debug\MainPage.g.cs
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\obj\Debug\calc_gui.g.resources
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\obj\Debug\calc_gui.Resources.AppResources.resources
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\obj\Debug\calc gui.csproj.GenerateResource.Cache
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\obj\Debug\calc_gui.dll
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\obj\Debug\calc_gui.pdb
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\obj\Debug\XapCacheFile.xml
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\obj\Debug\formula.g.cs
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\Microsoft.Phone.Controls.dll
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\ru\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\Bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\obj\Debug\calc gui.csprojResolveAssemblyReference.cache
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\obj\Debug\constant.g.cs
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\obj\Debug\constlib.g.cs
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\obj\Debug\editdata.g.cs
+C:\Users\Kuba\Documents\Visual Studio 2012\Projects\calc gui\calc gui\obj\Debug\symbol.g.cs
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\Assets\ApplicationIcon.png
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\Assets\Tiles\FlipCycleTileLarge.png
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\Assets\Tiles\FlipCycleTileSmall.png
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\Assets\Tiles\IconicTileMediumLarge.png
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\Assets\Tiles\IconicTileSmall.png
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\calc_gui.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\calc_gui.pdb
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\AppManifest.xaml
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\Properties\WMAppManifest.xml
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\calc_gui_Debug_AnyCPU.xap
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\Microsoft.Phone.Controls.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\ru\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\obj\Debug\calc gui.csprojResolveAssemblyReference.cache
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\obj\Debug\App.g.cs
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\obj\Debug\constant.g.cs
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\obj\Debug\constlib.g.cs
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\obj\Debug\editdata.g.cs
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\obj\Debug\formula.g.cs
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\obj\Debug\MainPage.g.cs
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\obj\Debug\symbol.g.cs
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\obj\Debug\calc_gui.g.resources
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\obj\Debug\calc_gui.Resources.AppResources.resources
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\obj\Debug\calc gui.csproj.GenerateResource.Cache
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\obj\Debug\calc_gui.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\obj\Debug\calc_gui.pdb
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\obj\Debug\XapCacheFile.xml

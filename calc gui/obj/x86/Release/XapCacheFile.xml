@@ -1,0 +1,15 @@
+﻿<xapCache source="C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\x86\Release\calc_gui_Release_x86.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="2014-05-14 14:31:26">
+  <file source="C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\obj\x86\Release\calc_gui.dll" archivePath="calc_gui.dll" lastWriteTime="2014-05-14 14:31:25" />
+  <file source="C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="2014-05-14 02:02:42" />
+  <file source="C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Assets\Tiles\FlipCycleTileLarge.png" archivePath="Assets\Tiles\FlipCycleTileLarge.png" lastWriteTime="2014-05-14 02:02:42" />
+  <file source="C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Assets\Tiles\FlipCycleTileSmall.png" archivePath="Assets\Tiles\FlipCycleTileSmall.png" lastWriteTime="2014-05-14 02:02:42" />
+  <file source="C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Assets\Tiles\IconicTileMediumLarge.png" archivePath="Assets\Tiles\IconicTileMediumLarge.png" lastWriteTime="2014-05-14 02:02:42" />
+  <file source="C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Assets\Tiles\IconicTileSmall.png" archivePath="Assets\Tiles\IconicTileSmall.png" lastWriteTime="2014-05-14 02:02:42" />
+  <file source="C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\x86\Release\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="2014-05-14 14:31:26" />
+  <file source="C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\x86\Release\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="2014-05-14 02:02:42" />
+  <file source="C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\x86\Release\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="2014-05-14 02:02:42" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Expression\Blend\Windows Phone\v8.0\Libraries\Microsoft.Expression.Interactions.dll" archivePath="Microsoft.Expression.Interactions.dll" lastWriteTime="2012-09-25 01:41:02" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\Libraries\Microsoft.Phone.Controls.dll" archivePath="Microsoft.Phone.Controls.dll" lastWriteTime="2013-03-03 18:40:38" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Expression\Blend\Windows Phone\v8.0\Libraries\System.Windows.Interactivity.dll" archivePath="System.Windows.Interactivity.dll" lastWriteTime="2012-09-25 01:41:02" />
+  <file source="C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\x86\Release\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="2014-05-14 14:31:26" />
+</xapCache>

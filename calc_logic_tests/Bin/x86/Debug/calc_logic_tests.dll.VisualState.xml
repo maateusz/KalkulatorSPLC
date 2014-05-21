@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
+  <TopNode>[0-1011]C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc_logic_tests\Bin\x86\Debug\calc_logic_tests.dll</TopNode>
+  <SelectedNode>[0-1012]calc_logic_tests</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1011]C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc_logic_tests\Bin\x86\Debug\calc_logic_tests.dll" Expanded="true" />
+    <Node UniqueName="[0-1012]calc_logic_tests" Expanded="true" />
+    <Node UniqueName="[0-1000]calc_logic_tests.CalcLogicTest" Expanded="true" />
+    <Node UniqueName="[0-1002]calc_logic_tests.CalcLogicTest.SimpleExpressionWithoutVariables" Expanded="true" />
+  </Nodes>
+</VisualState>

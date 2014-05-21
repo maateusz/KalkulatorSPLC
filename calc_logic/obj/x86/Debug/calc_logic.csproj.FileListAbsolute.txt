@@ -1,0 +1,9 @@
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc_logic\Bin\x86\Debug\calc_logic.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc_logic\Bin\x86\Debug\calc_logic.pdb
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc_logic\Bin\x86\Debug\MathParser.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc_logic\obj\x86\Debug\calc_logic.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc_logic\obj\x86\Debug\calc_logic.pdb
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc_logic\obj\x86\Debug\calc_logic.csprojResolveAssemblyReference.cache
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc_logic\Bin\x86\Debug\CalcDataBase.sdf
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc_logic\Bin\x86\Debug\calc_DB.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc_logic\Bin\x86\Debug\calc_DB.pdb
