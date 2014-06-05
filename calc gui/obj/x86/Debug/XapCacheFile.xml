@@ -1,11 +1,11 @@
-﻿<xapCache source="C:\Users\Mateusz\Documents\GitHub\KalkulatorSPLC\calc gui\Bin\x86\Debug\calc_gui_Debug_x86.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="2014-06-05 12:07:08">
+﻿<xapCache source="C:\Users\Mateusz\Documents\GitHub\KalkulatorSPLC\calc gui\Bin\x86\Debug\calc_gui_Debug_x86.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="2014-06-05 12:23:39">
   <file source="C:\Users\Mateusz\Documents\GitHub\KalkulatorSPLC\calc gui\obj\x86\Debug\calc_gui.dll" archivePath="calc_gui.dll" lastWriteTime="2014-06-05 12:07:06" />
   <file source="C:\Users\Mateusz\Documents\GitHub\KalkulatorSPLC\calc gui\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="2014-05-14 02:02:42" />
   <file source="C:\Users\Mateusz\Documents\GitHub\KalkulatorSPLC\calc gui\Assets\Tiles\FlipCycleTileLarge.png" archivePath="Assets\Tiles\FlipCycleTileLarge.png" lastWriteTime="2014-05-14 02:02:42" />
   <file source="C:\Users\Mateusz\Documents\GitHub\KalkulatorSPLC\calc gui\Assets\Tiles\FlipCycleTileSmall.png" archivePath="Assets\Tiles\FlipCycleTileSmall.png" lastWriteTime="2014-05-14 02:02:42" />
   <file source="C:\Users\Mateusz\Documents\GitHub\KalkulatorSPLC\calc gui\Assets\Tiles\IconicTileMediumLarge.png" archivePath="Assets\Tiles\IconicTileMediumLarge.png" lastWriteTime="2014-05-14 02:02:42" />
   <file source="C:\Users\Mateusz\Documents\GitHub\KalkulatorSPLC\calc gui\Assets\Tiles\IconicTileSmall.png" archivePath="Assets\Tiles\IconicTileSmall.png" lastWriteTime="2014-05-14 02:02:42" />
-  <file source="C:\Users\Mateusz\Documents\GitHub\KalkulatorSPLC\calc gui\Bin\x86\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="2014-06-02 10:58:24" />
+  <file source="C:\Users\Mateusz\Documents\GitHub\KalkulatorSPLC\calc gui\Bin\x86\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="2014-06-05 12:23:39" />
   <file source="C:\Users\Mateusz\Documents\GitHub\KalkulatorSPLC\calc gui\Bin\x86\Debug\CalcDataBase.sdf" archivePath="CalcDataBase.sdf" lastWriteTime="2014-05-22 22:20:24" />
   <file source="C:\Users\Mateusz\Documents\GitHub\KalkulatorSPLC\calc gui\Bin\x86\Debug\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="2014-05-14 02:02:42" />
   <file source="C:\Users\Mateusz\Documents\GitHub\KalkulatorSPLC\calc gui\Bin\x86\Debug\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="2014-05-14 02:02:42" />
@@ -15,5 +15,5 @@
   <file source="C:\Program Files (x86)\Microsoft SDKs\Expression\Blend\Windows Phone\v8.0\Libraries\Microsoft.Expression.Interactions.dll" archivePath="Microsoft.Expression.Interactions.dll" lastWriteTime="2012-09-25 01:41:02" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\Libraries\Microsoft.Phone.Controls.dll" archivePath="Microsoft.Phone.Controls.dll" lastWriteTime="2013-03-03 18:40:38" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Expression\Blend\Windows Phone\v8.0\Libraries\System.Windows.Interactivity.dll" archivePath="System.Windows.Interactivity.dll" lastWriteTime="2012-09-25 01:41:02" />
-  <file source="C:\Users\Mateusz\Documents\GitHub\KalkulatorSPLC\calc gui\Bin\x86\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="2014-06-02 10:58:24" />
+  <file source="C:\Users\Mateusz\Documents\GitHub\KalkulatorSPLC\calc gui\Bin\x86\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="2014-06-05 12:23:39" />
 </xapCache>
