@@ -135,6 +135,10 @@
       <Project>{37F70AE6-38C9-4BAD-8D0C-F6CE2C3E75D2}</Project>
       <Name>calc_logic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MathParser\MathParser.csproj">
+      <Project>{1F58F396-AE9E-44E0-8D15-3209EC466411}</Project>
+      <Name>MathParser</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

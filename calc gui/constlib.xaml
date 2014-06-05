@@ -14,7 +14,7 @@
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="Transparent" DataContext="{Binding}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -36,22 +36,21 @@
 				<RowDefinition Height="80" />
 				<RowDefinition Height="*" />
 			</Grid.RowDefinitions>
-			
-			<ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Visible" Margin="40,0,0,0">
-					<ListBox FontSize="48" FontWeight="ExtraLight">
-				<ListBoxItem>stała = 1</ListBoxItem>
-				<ListBoxItem>stała = 2</ListBoxItem>
-				<ListBoxItem>stała = 3</ListBoxItem>
-				<ListBoxItem>stała = 4</ListBoxItem>
-				<ListBoxItem>stała = 5</ListBoxItem>
-				<ListBoxItem>stała = 6</ListBoxItem>
-				<ListBoxItem>stała = 7</ListBoxItem>
-			</ListBox>
 
-
-			</ScrollViewer>
-			<Button Grid.Row="2">DODAJ</Button>
-			<Button Grid.Row="3">EDYTUJ</Button>
+            <ListBox x:Name="listaStalych" FontSize="48" Margin="60,0,0,0" FontWeight="ExtraLight" ItemsSource="{Binding userConsts}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" Margin="2">
+                            <!--<Button x:Name="name" Content="{Binding Name}" Background="#222" BorderThickness="0" Margin="2" FontSize="48" Click="StalaButton_Click"/>-->
+                            <TextBlock x:Name="name" Text="{Binding Name}" Margin="2" FontSize="48" DoubleTap="StalaButton_Click" />
+                            <TextBlock Text="="  Margin="2" FontSize="48"/>
+                            <TextBlock x:Name="value" Text="{Binding Value}" Margin="2" FontSize="48"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Button Grid.Row="2" Click="DODAJ_Stala_Click">DODAJ</Button>
+            <Button x:Name="EdytujButton" Grid.Row="3" Click="EDYTUJ_Stala_Click">EDYTUJ</Button>
 		</Grid>
     </Grid>
 

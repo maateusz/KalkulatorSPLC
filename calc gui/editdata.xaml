@@ -14,16 +14,16 @@
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="Transparent" DataContext="{Binding}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+        <StackPanel x:Name="EditPanel" Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="KALKULATOR FORMUŁ" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="zmienna" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="edytowanaZmienna" Text="{Binding}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
@@ -37,7 +37,7 @@
 				<RowDefinition Height="80" />
 				<RowDefinition Height="*" />
 			</Grid.RowDefinitions>
-			<TextBox Grid.Row="0" BorderThickness="0" Background="#111" FontWeight="ExtraLight" />
+			<TextBox x:Name="ValueInput" Grid.Row="0" BorderThickness="0" Background="White" FontWeight="ExtraLight"/>
 			<ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Visible">
 			<Grid>
 				<Grid.RowDefinitions>
@@ -58,28 +58,28 @@
 			
 				</Grid.ColumnDefinitions>
 
-				<Button Content="DODAJ" Grid.Row="0" Grid.Column="0" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="COFNIJ" Grid.Row="1" Grid.Column="0" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="ZAKRES" Grid.Row="2" Grid.Column="0" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
+				<Button Content="DODAJ" Grid.Row="0" Grid.Column="0" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="DODAJ_Click"/>
+				<Button Content="COFNIJ" Grid.Row="1" Grid.Column="0" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="COFNIJ_Click"/>
+				<Button Content="ZAKRES" Grid.Row="2" Grid.Column="0" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="ZAKRES_Click"/>
 
-				<Button Content="7" Grid.Row="0" Grid.Column="1" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="8" Grid.Row="0" Grid.Column="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="9" Grid.Row="0" Grid.Column="3" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="4" Grid.Row="1" Grid.Column="1" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="5" Grid.Row="1" Grid.Column="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="6" Grid.Row="1" Grid.Column="3" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="1" Grid.Row="2" Grid.Column="1" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="2" Grid.Row="2" Grid.Column="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="3" Grid.Row="2" Grid.Column="3" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="0" Grid.Row="3" Grid.Column="1" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="." Grid.Row="3" Grid.Column="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="E" Grid.Row="3" Grid.Column="3" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-			</Grid>
+				<Button Content="7" Grid.Row="0" Grid.Column="1" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="NumberButton_Click"/>
+                <Button Content="8" Grid.Row="0" Grid.Column="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="NumberButton_Click"/>
+                <Button Content="9" Grid.Row="0" Grid.Column="3" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="NumberButton_Click"/>
+                <Button Content="4" Grid.Row="1" Grid.Column="1" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="NumberButton_Click"/>
+                <Button Content="5" Grid.Row="1" Grid.Column="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="NumberButton_Click"/>
+                <Button Content="6" Grid.Row="1" Grid.Column="3" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="NumberButton_Click"/>
+                <Button Content="1" Grid.Row="2" Grid.Column="1" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="NumberButton_Click"/>
+                <Button Content="2" Grid.Row="2" Grid.Column="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="NumberButton_Click"/>
+                <Button Content="3" Grid.Row="2" Grid.Column="3" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="NumberButton_Click"/>
+                <Button Content="0" Grid.Row="3" Grid.Column="1" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="NumberButton_Click"/>
+                <Button Content="." Grid.Row="3" Grid.Column="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="NumberButton_Click"/>
+                <Button Content="E" Grid.Row="3" Grid.Column="3" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="NumberButton_Click"/>
+                </Grid>
 	
 
 
 			</ScrollViewer>
-			<Button Grid.Row="4">GOTOWE!</Button>
+			<Button Grid.Row="4" Click="GOTOWE_Click">GOTOWE!</Button>
         </Grid>
     </Grid>
 

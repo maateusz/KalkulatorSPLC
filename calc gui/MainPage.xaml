@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+    xmlns:src="clr-namespace:calc_gui"
     x:Class="calc_gui.MainPage"
     mc:Ignorable="d"
     d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
@@ -14,9 +15,11 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
-
+    <Control.Resources>
+        <src:ListConverter x:Key="myConverter"/>
+    </Control.Resources>
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="Transparent" DataContext="{Binding}">
 
         <!-- LOCALIZATION NOTE:
             To localize the displayed strings copy their values to appropriately named
@@ -38,146 +41,109 @@
          -->
 
         <!--Pivot Control-->
-        <phone:Pivot Title="KALKULATOR FORMUŁ" SelectedIndex="1" Background="{x:Null}">
+        <phone:Pivot Title="KALKULATOR FORMUŁ" SelectedIndex="1" Background="{x:Null}" Loaded="Pivot_Loaded">
             <!--Pivot item one-->
 
             <!--Pivot item one-->
             <phone:PivotItem Header="formuła">
-                <Grid x:Name="ContentPanel" Margin="12,0,12,0" Grid.Row="1" >
-			<Grid.RowDefinitions>
-				<RowDefinition Height="400" />
+                <Grid x:Name="ContentPanel" Margin="12,0,12,0" Grid.Row="1" DataContext="{Binding}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="400" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="80" />
+                        <RowDefinition Height="80" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
 
-				<RowDefinition Height="20" />
-				<RowDefinition Height="80" />
-				<RowDefinition Height="80" />
-				<RowDefinition Height="*" />
-			</Grid.RowDefinitions>
-			
-			<ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Visible">
-			
-			<ListBox FontSize="64" Margin="80,0,0,0" FontWeight="ExtraLight">
-				<ListBoxItem>formuła 1</ListBoxItem>
-				<ListBoxItem>formuła 2</ListBoxItem>
-				<ListBoxItem>formuła 3</ListBoxItem>
-				<ListBoxItem>formuła 4</ListBoxItem>
-				<ListBoxItem>formuła 5</ListBoxItem>
-				<ListBoxItem>formuła 6</ListBoxItem>
-				<ListBoxItem>formuła 7</ListBoxItem>
-			</ListBox>
+                    <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Visible">
+                        <ListBox x:Name="listaFormul" FontSize="64" Margin="80,0,0,0" FontWeight="ExtraLight" ItemsSource="{Binding functions}" SelectionChanged="listaFormul_SelectionChanged">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="2">
+                                        <TextBlock x:Name="nazwa" Text="{Binding Name}" Margin="40,0,0,0" FontSize="64" FontWeight="ExtraLight"/>
+                                        <!--<TextBlock Text=" = " Margin="2" FontSize="24"/>
+                                        <TextBlock Text="{Binding Expression}" Margin="2" FontSize="24"/>-->
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
 
-			</ScrollViewer>
-			<Button Grid.Row="2">DODAJ</Button>
-			<Button Grid.Row="3">EDYTUJ</Button>
-		</Grid>
+                    </ScrollViewer>
+                    <Button x:Name="DodajFormuleButton" Grid.Row="2" Click="DodajFormule_Click">DODAJ</Button>
+                    <Button x:Name="EdytujFormuleButton" Grid.Row="3" Click="EdytujFormule_Click">EDYTUJ</Button>
+                </Grid>
             </phone:PivotItem>
 
             <!--Pivot item two-->
             <phone:PivotItem Header="dane">
                 <!--Double line list no text wrapping-->
-                  <Grid  Margin="12,0,12,0" Grid.Row="1" >
-			<Grid.RowDefinitions>
-				<RowDefinition Height="120" />
-				<RowDefinition Height="20" />
-				
+                <Grid x:Name="danaF" Margin="12,0,12,0" Grid.Row="1" DataContext="{Binding}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="120" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>                        
+                    
+                    <TextBlock Grid.Row="0" FontSize="96" FontWeight="ExtraLight" Text="{Binding currentFormul.Name}"/>
+                            <!--<Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="100" />
+                            </Grid.RowDefinitions>-->
 
-			
-				<RowDefinition Height="*" />
-			
-			</Grid.RowDefinitions>
+                            <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Visible" Margin="10,0,0,0">
+                                <ListBox x:Name="listaParametrow" FontSize="64" Margin="80,0,0,0" FontWeight="ExtraLight" ItemsSource="{Binding variables}" >
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal" Margin="2">
+                                                <Button Content="{Binding name}" FontSize="48" FontWeight="ExtraLight" Background="#222" BorderThickness="0" Click="ArgumentButton_Click"/>
+                                                <TextBlock Text="{Binding listOfValues, Converter={StaticResource myConverter}, Mode=OneWay}" Margin="2" FontSize="48"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </ScrollViewer>
+                            <!--<Button Content="a" Grid.Row="0" Grid.Column="0" FontSize="48" FontWeight="ExtraLight" Background="#222" BorderThickness="0" ></Button>
+                            <Button Content="b" Grid.Row="1" Grid.Column="0" FontSize="48" FontWeight="ExtraLight" Background="#222" BorderThickness="0" ></Button>
+                            <Button Content="c" Grid.Row="2" Grid.Column="0" FontSize="48" FontWeight="ExtraLight" Background="#222" BorderThickness="0" ></Button>
+                            <Button Content="d" Grid.Row="3" Grid.Column="0" FontSize="48" FontWeight="ExtraLight" Background="#222" BorderThickness="0" ></Button>
+                            <Button Content="e" Grid.Row="4" Grid.Column="0" FontSize="48" FontWeight="ExtraLight" Background="#222" BorderThickness="0" ></Button>
 
-			<TextBlock Grid.Row="0" FontSize="96" FontWeight="ExtraLight">formuła 5</TextBlock>
-			<ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Visible" Margin="10,0,0,0">
-			
-				<Grid>
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="100"/>
-										<ColumnDefinition Width="*"/>
-					</Grid.ColumnDefinitions>
-					<Grid.RowDefinitions>
-						<RowDefinition Height="100" />
-						<RowDefinition Height="100" />
-						<RowDefinition Height="100" />
-						<RowDefinition Height="100" />
-						<RowDefinition Height="100" />
-					</Grid.RowDefinitions>
-				
-		
-					<Button Content="a" Grid.Row="0" Grid.Column="0" FontSize="48" FontWeight="ExtraLight" Background="#222" BorderThickness="0" ></Button>
-					<Button Content="b" Grid.Row="1" Grid.Column="0" FontSize="48" FontWeight="ExtraLight" Background="#222" BorderThickness="0" ></Button>
-					<Button Content="c" Grid.Row="2" Grid.Column="0" FontSize="48" FontWeight="ExtraLight" Background="#222" BorderThickness="0" ></Button>
-					<Button Content="d" Grid.Row="3" Grid.Column="0" FontSize="48" FontWeight="ExtraLight" Background="#222" BorderThickness="0" ></Button>
-					<Button Content="e" Grid.Row="4" Grid.Column="0" FontSize="48" FontWeight="ExtraLight" Background="#222" BorderThickness="0" ></Button>
-
-					<TextBlock Grid.Row="0" VerticalAlignment="Center" Grid.Column="1" FontSize="48" FontWeight="ExtraLight">wartość</TextBlock>
-					<TextBlock Grid.Row="1" VerticalAlignment="Center" Grid.Column="1" FontSize="48" FontWeight="ExtraLight">{ wartość 1; wartość 2 }</TextBlock>
-					<TextBlock Grid.Row="2" VerticalAlignment="Center" Grid.Column="1" FontSize="48" FontWeight="ExtraLight"> &#60;2;5&#62; (0.5) </TextBlock>
-					<TextBlock Grid.Row="3" VerticalAlignment="Center" Grid.Column="1" FontSize="48" FontWeight="ExtraLight">wartość</TextBlock>
-					<TextBlock Grid.Row="4" VerticalAlignment="Center" Grid.Column="1" FontSize="48" FontWeight="ExtraLight">wartość</TextBlock>
-			</Grid>		
-			</ScrollViewer>
-			</Grid>
+                            <TextBlock Grid.Row="0" VerticalAlignment="Center" Grid.Column="1" FontSize="48" FontWeight="ExtraLight">wartość</TextBlock>
+                            <TextBlock Grid.Row="1" VerticalAlignment="Center" Grid.Column="1" FontSize="48" FontWeight="ExtraLight">{ wartość 1; wartość 2 }</TextBlock>
+                            <TextBlock Grid.Row="2" VerticalAlignment="Center" Grid.Column="1" FontSize="48" FontWeight="ExtraLight"> &#60;2;5&#62; (0.5)</TextBlock>
+                            <TextBlock Grid.Row="3" VerticalAlignment="Center" Grid.Column="1" FontSize="48" FontWeight="ExtraLight">wartość</TextBlock>
+                            <TextBlock Grid.Row="4" VerticalAlignment="Center" Grid.Column="1" FontSize="48" FontWeight="ExtraLight">wartość</TextBlock>-->
+                </Grid>
             </phone:PivotItem>
-            <phone:PivotItem Header="wynik">
-            	     <Grid  Margin="12,0,12,0" Grid.Row="1" >
-			<Grid.RowDefinitions>
-				<RowDefinition Height="120" />
-				<RowDefinition Height="*" />
-				<RowDefinition Height="100" />
-				
-			</Grid.RowDefinitions>
 
-			<TextBlock Grid.Row="0" FontSize="96" FontWeight="ExtraLight">formuła 5</TextBlock>
-			<ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Visible" Margin="10,0,0,0">
-			
-				<Grid>
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="120"/>
-						<ColumnDefinition Width="120"/>
-										<ColumnDefinition Width="*"/>
-					</Grid.ColumnDefinitions>
-					<Grid.RowDefinitions>
-						<RowDefinition Height="100" />
-						<RowDefinition Height="40" />
-						<RowDefinition Height="40" />
-						<RowDefinition Height="40" />
-						<RowDefinition Height="40" />
-						<RowDefinition Height="40" />
-						<RowDefinition Height="40" />
-						<RowDefinition Height="40" />
-					</Grid.RowDefinitions>
-				
-					<TextBlock Grid.Row="0" VerticalAlignment="Center" Grid.Column="0" FontSize="64" FontWeight="ExtraLight">a</TextBlock>		
-					<TextBlock Grid.Row="0" VerticalAlignment="Center" Grid.Column="1" FontSize="64" FontWeight="ExtraLight">b</TextBlock>		
-					<TextBlock Grid.Row="0" VerticalAlignment="Center" Grid.Column="2" FontSize="64" FontWeight="ExtraLight">c</TextBlock>		
-					
-					<TextBlock Grid.Row="1" VerticalAlignment="Center" Grid.Column="0" FontSize="32" FontWeight="ExtraLight">123456</TextBlock>
-					<TextBlock Grid.Row="1" VerticalAlignment="Center" Grid.Column="1" FontSize="32" FontWeight="ExtraLight">123456</TextBlock>
-					<TextBlock Grid.Row="1" VerticalAlignment="Center" Grid.Column="2" FontSize="32" FontWeight="ExtraLight">123456</TextBlock>
-					<TextBlock Grid.Row="2" VerticalAlignment="Center" Grid.Column="0" FontSize="32" FontWeight="ExtraLight">123456</TextBlock>
-					<TextBlock Grid.Row="2" VerticalAlignment="Center" Grid.Column="1" FontSize="32" FontWeight="ExtraLight">123456</TextBlock>
-					<TextBlock Grid.Row="2" VerticalAlignment="Center" Grid.Column="2" FontSize="32" FontWeight="ExtraLight">123456</TextBlock>
-					<TextBlock Grid.Row="3" VerticalAlignment="Center" Grid.Column="0" FontSize="32" FontWeight="ExtraLight">123456</TextBlock>
-					<TextBlock Grid.Row="3" VerticalAlignment="Center" Grid.Column="1" FontSize="32" FontWeight="ExtraLight">123456</TextBlock>
-					<TextBlock Grid.Row="3" VerticalAlignment="Center" Grid.Column="2" FontSize="32" FontWeight="ExtraLight">123456</TextBlock>
-					<TextBlock Grid.Row="4" VerticalAlignment="Center" Grid.Column="0" FontSize="32" FontWeight="ExtraLight">123456</TextBlock>
-					<TextBlock Grid.Row="4" VerticalAlignment="Center" Grid.Column="1" FontSize="32" FontWeight="ExtraLight">123456</TextBlock>
-					<TextBlock Grid.Row="4" VerticalAlignment="Center" Grid.Column="2" FontSize="32" FontWeight="ExtraLight">123456</TextBlock>
-					<TextBlock Grid.Row="5" VerticalAlignment="Center" Grid.Column="0" FontSize="32" FontWeight="ExtraLight">123456</TextBlock>
-					<TextBlock Grid.Row="5" VerticalAlignment="Center" Grid.Column="1" FontSize="32" FontWeight="ExtraLight">123456</TextBlock>
-					<TextBlock Grid.Row="5" VerticalAlignment="Center" Grid.Column="2" FontSize="32" FontWeight="ExtraLight">123456</TextBlock>
-					<TextBlock Grid.Row="6" VerticalAlignment="Center" Grid.Column="0" FontSize="32" FontWeight="ExtraLight">123456</TextBlock>
-					<TextBlock Grid.Row="6" VerticalAlignment="Center" Grid.Column="1" FontSize="32" FontWeight="ExtraLight">123456</TextBlock>
-					<TextBlock Grid.Row="6" VerticalAlignment="Center" Grid.Column="2" FontSize="32" FontWeight="ExtraLight">123456</TextBlock>
-					<TextBlock Grid.Row="7" VerticalAlignment="Center" Grid.Column="0" FontSize="32" FontWeight="ExtraLight">123456</TextBlock>
-					<TextBlock Grid.Row="7" VerticalAlignment="Center" Grid.Column="1" FontSize="32" FontWeight="ExtraLight">123456</TextBlock>
-					<TextBlock Grid.Row="7" VerticalAlignment="Center" Grid.Column="2" FontSize="32" FontWeight="ExtraLight">123456</TextBlock>
-					<TextBlock Grid.Row="8" VerticalAlignment="Center" Grid.Column="0" FontSize="32" FontWeight="ExtraLight">123456</TextBlock>
-					<TextBlock Grid.Row="8" VerticalAlignment="Center" Grid.Column="1" FontSize="32" FontWeight="ExtraLight">123456</TextBlock>
-					<TextBlock Grid.Row="8" VerticalAlignment="Center" Grid.Column="2" FontSize="32" FontWeight="ExtraLight">123456</TextBlock>
-			</Grid>		
-			</ScrollViewer>
-			<Button Grid.Row="2">WYKRES</Button>
-			</Grid>
+            <phone:PivotItem Header="wynik">
+                <Grid  Margin="12,0,12,0" Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="120" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="100" />
+
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="{Binding currentFormul.Name}"  Grid.Row="0" FontSize="96" FontWeight="ExtraLight" />
+                    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Visible" Margin="10,0,0,0">
+                                <ListBox x:Name="listaWynikow" FontSize="64" Margin="80,0,0,0" FontWeight="ExtraLight" ItemsSource="{Binding results}" >
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                                <TextBlock Text="{Binding}" Margin="2" FontSize="24"/>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </ScrollViewer>
+                    <Button Grid.Row="2">WYKRES</Button>
+                </Grid>
             </phone:PivotItem>
         </phone:Pivot>
 

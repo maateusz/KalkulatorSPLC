@@ -1,0 +1,8 @@
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\MathParser\Bin\x86\Debug\MathParser.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\MathParser\Bin\x86\Debug\MathParser.pdb
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\MathParser\obj\x86\Debug\MathParser.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\MathParser\obj\x86\Debug\MathParser.pdb
+C:\Users\Mateusz\Documents\GitHub\KalkulatorSPLC\MathParser\Bin\x86\Debug\MathParser.dll
+C:\Users\Mateusz\Documents\GitHub\KalkulatorSPLC\MathParser\Bin\x86\Debug\MathParser.pdb
+C:\Users\Mateusz\Documents\GitHub\KalkulatorSPLC\MathParser\obj\x86\Debug\MathParser.dll
+C:\Users\Mateusz\Documents\GitHub\KalkulatorSPLC\MathParser\obj\x86\Debug\MathParser.pdb

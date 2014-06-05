@@ -35,7 +35,7 @@
 				<RowDefinition Height="80" />
 				<RowDefinition Height="*" />
 			</Grid.RowDefinitions>
-			<TextBox Grid.Row="0" BorderThickness="0" Background="#111" />
+            <TextBox x:Name="FormulaTextBox" Grid.Row="0" BorderThickness="0" Background="White" TextChanged="TextChanged_Event"/>
 			<ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Visible">
 			<Grid>
 				<Grid.RowDefinitions>
@@ -62,46 +62,46 @@
 
 
 				</Grid.ColumnDefinitions>
-				<Button Content="var" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="const" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="(" Grid.Row="2" Grid.Column="0" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content=")" Grid.Row="2" Grid.Column="1" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="&#x2211;" Grid.Row="3" Grid.Column="0" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="&#x220F;" Grid.Row="3" Grid.Column="1" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
+				<Button Content="var" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="AddVarButton_Click"/>
+				<Button Content="const" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="ConstButton_Click"/>
+                <Button Content="(" Grid.Row="2" Grid.Column="0" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="OperationNumberButton_Click"/>
+                <Button Content=")" Grid.Row="2" Grid.Column="1" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="OperationNumberButton_Click"/>
+                <Button Content="&#x2211;" Grid.Row="3" Grid.Column="0" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="EmptyButton_Click"/>
+                <Button Content="&#x220F;" Grid.Row="3" Grid.Column="1" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="EmptyButton_Click"/>
 
-				<Button Content="+" Grid.Row="0" Grid.Column="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="-" Grid.Row="1" Grid.Column="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="*" Grid.Row="2" Grid.Column="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="/" Grid.Row="3" Grid.Column="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				
-				<Button Content="^" Grid.Row="0" Grid.Column="3" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="&#x221A;" Grid.Row="1" Grid.Column="3" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="log" Grid.Row="2" Grid.Column="3" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="e" Grid.Row="3" Grid.Column="3" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-			
-				<Button Content="sin x" Grid.Row="0" Grid.Column="4" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="cos x" Grid.Row="1" Grid.Column="4" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="tan x" Grid.Row="2" Grid.Column="4" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="ctg x" Grid.Row="3" Grid.Column="4" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
+                <Button Content="&#x002B;" Grid.Row="0" Grid.Column="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="OperationNumberButton_Click"/>
+                <Button Content="-" Grid.Row="1" Grid.Column="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="OperationNumberButton_Click"/>
+                <Button Content="*" Grid.Row="2" Grid.Column="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="OperationNumberButton_Click"/>
+                <Button Content="/" Grid.Row="3" Grid.Column="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="OperationNumberButton_Click"/>
 
-				<Button Content="7" Grid.Row="5" Grid.Column="0" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="8" Grid.Row="5" Grid.Column="1" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="9" Grid.Row="5" Grid.Column="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="4" Grid.Row="6" Grid.Column="0" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="5" Grid.Row="6" Grid.Column="1" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="6" Grid.Row="6" Grid.Column="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="1" Grid.Row="7" Grid.Column="0" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="2" Grid.Row="7" Grid.Column="1" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="3" Grid.Row="7" Grid.Column="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="0" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-				<Button Content="." Grid.Row="8" Grid.Column="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight"/>
-			</Grid>
+                <Button Content="^" Grid.Row="0" Grid.Column="3" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="OperationNumberButton_Click"/>
+                <Button Content="&#x221A;" Grid.Row="1" Grid.Column="3" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="EmptyButton_Click"/>
+                <Button Content="log" Grid.Row="2" Grid.Column="3" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="Log_Button_Click"/>
+                <Button Content="e" Grid.Row="3" Grid.Column="3" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="EmptyButton_Click"/>
+
+                <Button Content="sin x" Grid.Row="0" Grid.Column="4" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="Trigonometric_Click"/>
+                <Button Content="cos x" Grid.Row="1" Grid.Column="4" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="Trigonometric_Click"/>
+                <Button Content="tan x" Grid.Row="2" Grid.Column="4" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="Trigonometric_Click"/>
+                <Button Content="ctg x" Grid.Row="3" Grid.Column="4" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="Trigonometric_Click"/>
+
+				<Button Content="7" Grid.Row="5" Grid.Column="0" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="OperationNumberButton_Click"/>
+                <Button Content="8" Grid.Row="5" Grid.Column="1" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="OperationNumberButton_Click"/>
+                <Button Content="9" Grid.Row="5" Grid.Column="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="OperationNumberButton_Click"/>
+                <Button Content="4" Grid.Row="6" Grid.Column="0" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="OperationNumberButton_Click"/>
+                <Button Content="5" Grid.Row="6" Grid.Column="1" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="OperationNumberButton_Click"/>
+                <Button Content="6" Grid.Row="6" Grid.Column="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="OperationNumberButton_Click"/>
+                <Button Content="1" Grid.Row="7" Grid.Column="0" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="OperationNumberButton_Click"/>
+                <Button Content="2" Grid.Row="7" Grid.Column="1" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="OperationNumberButton_Click"/>
+                <Button Content="3" Grid.Row="7" Grid.Column="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="OperationNumberButton_Click"/>
+                <Button Content="0" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="OperationNumberButton_Click"/>
+                <Button Content="." Grid.Row="8" Grid.Column="2" BorderThickness="0" Background="#111" FontWeight="ExtraLight" Click="OperationNumberButton_Click"/>
+                </Grid>
 	
 
 
 			</ScrollViewer>
-			<Button Grid.Row="4">ZAPISZ</Button>
-			<Button Grid.Row="5">ANULUJ</Button>
+			<Button Grid.Row="4" Click="ZAPISZ_Formule_Click">ZAPISZ</Button>
+			<Button Grid.Row="5" Click="AnulujFormula_Click">ANULUJ</Button>
 		</Grid>
 
         <!--ContentPanel - place additional content here-->

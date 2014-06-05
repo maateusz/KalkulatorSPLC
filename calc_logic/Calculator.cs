@@ -8,8 +8,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-
+using System.Linq;
+using System.Collections.ObjectModel;
 using System.Collections.Generic;
+using calc_DB;
+using System.ComponentModel;
+
 
 using Mathos;
 using Mathos.Parser;
@@ -17,17 +21,78 @@ using Mathos.Parser;
 
 namespace calc_logic
 {
-    public sealed class Calculator//singleton
+    public sealed class Calculator : INotifyPropertyChanged
     {
-
         private static Calculator calculator = null;
-        private MathParser parser;
-        private string expression;
-        private List<double> results;
-        private List<Variable> variables;
 
-        //public static void Main() { ;}//to trzeba wyciepnac, bo to tylko do kompilacji, bo cos mi tam nie dzialalo
+        public static MathParser parser = new MathParser();
+        
+        private ObservableCollection<Variable> _variables;//lista zmiennych jakie wystapia w formule
+        public ObservableCollection<Variable> variables 
+        { 
+            get
+            {
+                return _variables;
+            }
+            set
+            {
+                if(_variables == value)
+                {
+                    return;
+                }
+                else
+                {
+                    _variables = value;
+                    NotifyPropertyChanged("variables");
+                }
+            }
+        }//właściwosc
 
+        
+        
+        private ObservableCollection<double> _results;//lista wynikow
+        public ObservableCollection<double> results 
+        {
+            get
+            {
+                return _results;
+            }
+            set
+            {
+                if (_results == value)
+                    return;
+                else
+                {
+                    _results = value;
+                    NotifyPropertyChanged("results");
+                }
+            }
+        }
+        
+        private Function _currentFormul;//        
+        public Function currentFormul
+        {
+            get
+            {
+                return _currentFormul;
+            }
+            set
+            {
+                if (currentFormul == value)
+                    return;
+                else
+                {
+                    _currentFormul = value;
+                    NotifyPropertyChanged("currentFormul");
+                }
+            }
+
+        }//to jest formula ktora bedziemy obliczac
+ 
+        public string expression { get; set; }//przechwouje wyrazenie zawarte w formule       
+        public ObservableCollection<Function> functions { get; set; } //lista wszystkich formuł
+        public ObservableCollection<Const> userConsts { get; set; } //lista stałych uzytkownika
+        
         public static Calculator Instance
         {
             get
@@ -39,33 +104,56 @@ namespace calc_logic
                 return calculator;
             }
         }
-
+        
         private Calculator()
         {
-            parser = new MathParser();
+            //parser = new Mathparser;
+            functions = UserFunctions.getAllFunctionsFromDataBase();
+            userConsts = UserConsts.getAllConstsFromDataBase();
+            if (functions != null)
+            {
+                currentFormul = functions.GetEnumerator().Current;
+            }
+            else
+            {
+                functions = null;
+            }
             expression = string.Empty;
-            results = new List<double>();
-            variables = new List<Variable>();
+            results = new ObservableCollection<double>();
+            variables = new ObservableCollection<Variable>();
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    variables.Add(new Variable("var" + i, 0));
+            //}            
         }
 
-        public void setExpression(string expression)
+        public void setCurrentFunction(string name)//ustawia biezaca formule
         {
-            this.expression = expression;
+            var dc = DBContext.Context;
+            var func = dc.Functions.First(f => f.Name.Equals(name));
+            currentFormul = func;
+            
+            variables = new ObservableCollection<Variable>();
+            for (int i = 0; i < func.NumberOfParameters; i++)
+            {
+                variables.Add(new Variable("var" + i, new ObservableCollection<double>()));
+            }
+            NotifyPropertyChanged("variables");
+            results.Clear();
+            NotifyPropertyChanged("results");
+            CalculateFormule();
+            //CalculateFormule();
         }
 
-        public string getExpression()
+        public void calculate(int i = 0)//liczy
         {
-            return expression;
-        }
-
-        public void calculate(int i = 0)
-        {
+            
             if (variables.Count == 0)
             {
                 results.Add((double)(parser.Parse(expression)));
                 return;
             }
-            if (i == variables.Count)
+            if (i == variables.Count)//tu mozna zamienic na i==currentFunction.numberOfParam
                 return;
             else
             {
@@ -79,43 +167,117 @@ namespace calc_logic
             }
         }
 
-        public MathParser getParser()
+        public void CalculateFormule()//ta funckja liczy formułe
+        {
+            this.expression = currentFormul.Expression;
+            results = new ObservableCollection<double>();
+            calculate();
+            NotifyPropertyChanged("results");
+        }
+
+        public MathParser getParser()//zwaraca parser - niepotrzebne bo parser jest static
         {
             return parser;
         }
 
+        //dodaje zmienna, ale chyba nigdzie nie jest wykorzystywana
         public void addVariable(Variable newVariable)
         {
             variables.Add(newVariable);
         }
 
-        public List<double> getResults()
+        //ustawia zmienna na zakres wartosci
+        public void addNewRangeToVariable(string varName, double start, double stop, double step)
+        {
+            var variable = variables.First(v => v.name.Equals(varName));
+            variable.setValues(start, stop, step);
+            NotifyPropertyChanged("variables");
+            //CalculateFormule();
+        }
+
+        //dodaje wartosc do zmiennej
+        public void addNewValueToVariable(string varName, double value)
+        {
+            var variable = variables.First(v => v.name.Equals(varName));
+            variable.addValue(value);
+            NotifyPropertyChanged("variables");
+            //CalculateFormule();
+        }
+
+        public void InitializeCalculator()
+        {
+            UserConsts.LoadConstsFromDataBase();
+            UserFunctions.LoadFunctionsFromDataBase();
+            UserFunctions.addAverageOfStudies(parser);
+            UserFunctions.addProduct(parser);
+            parser.LocalFunctions.Add("ctg", x => (decimal)(1 / Math.Tan((double)x[0])));//sprawdzić czy ctg = 1/tan;
+
+            //UserFunctions.addSum(
+            //UserFunctions.addFunction("FormulaXYZ", "var0+var1", 2, parser);
+            //UserConsts.addConst("Stala0", 0.25, parser);
+            //currentFormul = functions.FirstOrDefault();
+        }
+
+        public void CloseCalculator()
+        {
+            UserFunctions.removeFunction("FormulaXYZ");
+            UserConsts.removeConst("StalaXYZ");
+        }
+
+        public ObservableCollection<double> getResults()
         {
             return results;
         }
         
         public void removeVariables()
         {
-            //sprawdzic czy poprawnie ???
-            variables.RemoveAll(v => true);
+            
+            variables.Clear();
+            
             
         }
 
         public void removeResults()
         {
-            //sprawdzic czy poprawnie ???
-            results.RemoveAll(v => true);
+            
+            results.Clear();
+            
         }
 
         public void cleanCalculator()
         {
-            removeVariables();
+            //removeVariables();
             removeResults();
-            foreach(string func in UserFunctions.getUsersFunctions())
-                parser.LocalFunctions.Remove(func);//jakies inteligentne usuwanie tylko tych dodanych przez uzytkownika funkcji, zmiennych i stalych
-            foreach (string con in UserConsts.getUsersConsts())
-                parser.LocalVariables.Remove(con);
-        
+            UserConsts.removeAllConst();
+            UserFunctions.removeAllFunctions();
+            /*
+            foreach (var v in variables)//ustawienie zmienych na 0
+            {
+                v.listOfValues = new ObservableCollection<double> { 0 };
+            }
+             */
+            refreshCalculator();
+        }
+        //odswieza caluclator 
+        public void refreshCalculator()
+        {
+            functions = UserFunctions.getAllFunctionsFromDataBase();
+            userConsts = UserConsts.getAllConstsFromDataBase();            
+            NotifyPropertyChanged("userConsts");
+            NotifyPropertyChanged("functions");
+            NotifyPropertyChanged("currentFormul");
+            NotifyPropertyChanged("results");
+            //CalculateFormule();
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void NotifyPropertyChanged(String propertyName)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (null != handler)
+            {
+                handler(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
 
 

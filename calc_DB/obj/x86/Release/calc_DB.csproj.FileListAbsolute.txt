@@ -1,0 +1,5 @@
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc_DB\Bin\x86\Release\CalcDataBase.sdf
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc_DB\Bin\x86\Release\calc_DB.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc_DB\Bin\x86\Release\calc_DB.pdb
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc_DB\obj\x86\Release\calc_DB.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc_DB\obj\x86\Release\calc_DB.pdb

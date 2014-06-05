@@ -10,28 +10,68 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
 using System.Collections.Generic;
-
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using Mathos;
 using Mathos.Parser;
 
 namespace calc_logic
 {
-    public class Variable
+    public class Variable : INotifyPropertyChanged
     {
-        private string name;//zmienna reprezentujaca nazwe zmiennej
-        private List<double> listOfValues;//lista wartosci dla jakie przyjmuje zmienna w obliczanym wyrazeniu
-        //private static List<string> listOfVariables = new List<string>();
+        private string _name;
+        public string name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                if (_name == value)
+                    return;
+                else
+                {
+                    _name = value;
+                    NotifyPropertyChanged("name");
+                }
+            }
+            
+        }//zmienna reprezentujaca nazwe zmiennej
+
+        private ObservableCollection<double> _listOfValues;
+
+        public ObservableCollection<double> listOfValues 
+        {
+            get
+            {
+                return _listOfValues;
+            }
+            set
+            {
+                if (_listOfValues == value)
+                    return;
+                else
+                {
+                    _listOfValues = value;
+                    NotifyPropertyChanged("listOfValues");
+                }
+            }
+        }
+        //private List<double> listOfValues;//lista wartosci dla jakie przyjmuje zmienna w obliczanym wyrazeniu
+
         public Variable(string name, double value)
         {
             this.name = name;
-            listOfValues = new List<double>();
+            listOfValues = new ObservableCollection<double>();
             listOfValues.Add(value);
+            
             //listOfVariables.Add(name);
         }
 
         public Variable(string name, double start, double stop, double step)
         {
-            listOfValues = new List<double>();
+            listOfValues = new ObservableCollection<double>();
             this.name = name;
             double counter = start;
             while (counter <= stop)
@@ -42,7 +82,7 @@ namespace calc_logic
             //listOfVariables.Add(name);
         }
 
-        public Variable(string name, List<double> list)
+        public Variable(string name, ObservableCollection<double> list)
         {
             //listOfValues = new List<double>();
             this.name = name;
@@ -52,7 +92,7 @@ namespace calc_logic
 
         public string getName()
         {
-            return name;
+            return _name;
         }
 
         public void setName(string newName)
@@ -60,19 +100,50 @@ namespace calc_logic
             name = newName;
         }
 
-        public List<double> getValues()
+        public ObservableCollection<double> getValues()
         {
             return listOfValues;
         }
 
-        public void setValues(List<double> newList)
+        public void setValues(ObservableCollection<double> newList)
         {
             listOfValues = newList;
+            NotifyPropertyChanged("listOfValues");
+        }
+
+        public void setValues(double value)
+        {
+            listOfValues = new ObservableCollection<double>();
+            listOfValues.Add(value);
+            NotifyPropertyChanged("listOfValues");
+        }
+
+        public void setValues(double start, double stop, double step)
+        {
+            listOfValues = new ObservableCollection<double>();
+            double counter = start;
+            while (counter <= stop)
+            {
+                listOfValues.Add(counter);
+                counter += step;
+            }
+            NotifyPropertyChanged("listOfValues");
         }
 
         public void addValue(double value)
         {
             listOfValues.Add(value);
+            NotifyPropertyChanged("listOfValues");
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyPropertyChanged(String propertyName)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (null != handler)
+            {
+                handler(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 }

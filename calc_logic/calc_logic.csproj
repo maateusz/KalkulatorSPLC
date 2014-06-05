@@ -93,17 +93,16 @@
     <Compile Include="Variable.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="MathParser">
-      <HintPath>..\packages\MathosParser.1.0.5.1\lib\MathParser.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\calc_DB\calc_DB.csproj">
       <Project>{0D5203EA-4791-40FF-92CD-31CAA7E1B725}</Project>
       <Name>calc_DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MathParser\MathParser.csproj">
+      <Project>{1F58F396-AE9E-44E0-8D15-3209EC466411}</Project>
+      <Name>MathParser</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />

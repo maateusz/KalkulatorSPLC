@@ -46,3 +46,9 @@ C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\obj\x86\Release\calc gui.cspr
 C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\obj\x86\Release\calc_gui.dll
 C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\obj\x86\Release\calc_gui.pdb
 C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\obj\x86\Release\XapCacheFile.xml
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\x86\Release\CalcDataBase.sdf
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\x86\Release\calc_logic.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\x86\Release\MathParser.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\x86\Release\calc_DB.dll
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\x86\Release\calc_logic.pdb
+C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc gui\Bin\x86\Release\calc_DB.pdb

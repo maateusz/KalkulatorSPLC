@@ -8,21 +8,45 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using calc_gui.Resources;
+using calc_logic;
+using calc_DB;
+
+using Mathos;
+using Mathos.Parser;
+
+using System.Collections.ObjectModel;
 
 namespace calc_gui
 {
     public partial class MainPage : PhoneApplicationPage
     {
+
+        
+        public Calculator calc { get; set; }
         // Constructor
         public MainPage()
         {
+            var dc = new CalcDataBaseContext(CalcDataBaseContext.ConnectionString);
+            dc.CreateIfNotExists();
+            dc.LogDebug = true;
+            
+            calc = Calculator.Instance;
+
             InitializeComponent();
+            UserConsts.removeAllConst();
+            UserFunctions.removeAllFunctions();
+            
+            Calculator.Instance.InitializeCalculator();
+            UserFunctions.addFunction("formula1", "var0+var1", 2, calc.getParser());
+            calc.refreshCalculator(); 
+            UserFunctions.addFunction("formula2", "var0-var1", 2, calc.getParser());
+            UserConsts.addConst("stala1", 2.3, calc.getParser());
+            UserConsts.addConst("stala2", 4.5, calc.getParser());
 
-            // Set the data context of the listbox control to the sample data
-            DataContext = App.ViewModel;
 
-            // Sample code to localize the ApplicationBar
-            //BuildLocalizedApplicationBar();
+            calc.refreshCalculator();            
+            LayoutRoot.DataContext = calc;
+
         }
 
         // Load data for the ViewModel Items
@@ -34,20 +58,54 @@ namespace calc_gui
             }
         }
 
-        // Sample code for building a localized ApplicationBar
-        //private void BuildLocalizedApplicationBar()
-        //{
-        //    // Set the page's ApplicationBar to a new instance of ApplicationBar.
-        //    ApplicationBar = new ApplicationBar();
+        private void Pivot_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (listaFormul.Items.Count > 0)
+            {
+                //listaFormul.SelectedIndex = 0;
+                EdytujFormuleButton.IsEnabled = true;
+            }
+            else
+            {
+                EdytujFormuleButton.IsEnabled = false;
+            }
+        }
 
-        //    // Create a new button and set the text value to the localized string from AppResources.
-        //    ApplicationBarIconButton appBarButton = new ApplicationBarIconButton(new Uri("/Assets/AppBar/appbar.add.rest.png", UriKind.Relative));
-        //    appBarButton.Text = AppResources.AppBarButtonText;
-        //    ApplicationBar.Buttons.Add(appBarButton);
+        private void listaFormul_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            EdytujFormuleButton.IsEnabled = true;
+            var debug = listaFormul.SelectedValue;
+            if (debug is Function)
+            {
+                calc.setCurrentFunction(((Function)debug).Name);
+            }
+        }
 
-        //    // Create a new menu item with the localized string from AppResources.
-        //    ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
-        //    ApplicationBar.MenuItems.Add(appBarMenuItem);
-        //}
+
+
+        private void ArgumentButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/editdata.xaml?msg=" + ((Button)sender).Content, UriKind.Relative));
+        }
+
+        private void DodajFormule_Click(object sender, RoutedEventArgs e)
+        {
+            formula.currentText = "formula" + (Calculator.Instance.functions.Count + 1) + "=";
+            formula.isEdit = false;
+            NavigationService.Navigate(new Uri("/formula.xaml", UriKind.Relative));
+        }
+
+        private void EdytujFormule_Click(object sender, RoutedEventArgs e)
+        {
+            if (listaFormul.Items.Count == 0)
+                return;
+            if (listaFormul.SelectedItem == null)
+                return;
+            formula.isEdit = true;
+            formula.currentText = ((Function)listaFormul.SelectedItem).Name + "=" + ((Function)listaFormul.SelectedItem).Expression;
+            NavigationService.Navigate(new Uri("/formula.xaml", UriKind.Relative));//na wszelki wypadek moze dac tu try catch
+        }
+
+
     }
 }

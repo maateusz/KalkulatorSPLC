@@ -3,3 +3,8 @@ C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc_DB\Bin\x86\Debug\calc_DB.pdb
 C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc_DB\obj\x86\Debug\calc_DB.dll
 C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc_DB\obj\x86\Debug\calc_DB.pdb
 C:\Users\Mateusz\Desktop\Mateusz\calc gui\calc_DB\Bin\x86\Debug\CalcDataBase.sdf
+C:\Users\Mateusz\Documents\GitHub\KalkulatorSPLC\calc_DB\Bin\x86\Debug\CalcDataBase.sdf
+C:\Users\Mateusz\Documents\GitHub\KalkulatorSPLC\calc_DB\Bin\x86\Debug\calc_DB.dll
+C:\Users\Mateusz\Documents\GitHub\KalkulatorSPLC\calc_DB\Bin\x86\Debug\calc_DB.pdb
+C:\Users\Mateusz\Documents\GitHub\KalkulatorSPLC\calc_DB\obj\x86\Debug\calc_DB.dll
+C:\Users\Mateusz\Documents\GitHub\KalkulatorSPLC\calc_DB\obj\x86\Debug\calc_DB.pdb
