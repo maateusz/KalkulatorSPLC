@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "calc_logic", "calc_logic\ca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "calc_DB", "calc_DB\calc_DB.csproj", "{0D5203EA-4791-40FF-92CD-31CAA7E1B725}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "calc_DB_tests", "calc_DB_tests\calc_DB_tests.csproj", "{BCA3D434-3300-48E0-AE72-FE11CF39EC15}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "calc_tests", "calc_DB_tests\calc_tests.csproj", "{BCA3D434-3300-48E0-AE72-FE11CF39EC15}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathParser", "MathParser\MathParser.csproj", "{1F58F396-AE9E-44E0-8D15-3209EC466411}"
 EndProject
